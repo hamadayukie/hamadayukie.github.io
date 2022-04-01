@@ -4,354 +4,479 @@ html {
   font-size: 100%;
 }
 body {
-  color: #121212;
-  font-size: 0.9rem;
-  line-height: 1.7;
+  color: #050507;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
 }
 a {
-  color: #121212;
+  color: #fff;
   text-decoration: none;
 }
 img {
   max-width: 100%;
+  vertical-align: bottom;
 }
 li {
   list-style: none;
 }
+
+/* h1タグ用 */
 .site-title {
-  line-height: 1px;
+  font-size: 6.25rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  margin: 100px 0;
 }
-.site-title a {
-  display: block;
+/* h2タグ用 */
+.section-title {
+  border-bottom: solid 1px #fff;
+  /* 下線をテキストと同じ幅にあわせるために設定 */
+  display: inline-block;
+  font-size: 3.75rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  margin-bottom: 45px;
 }
-.sec-title {
-  font-size: 2.25rem;
-  margin-bottom: 30px;
+/* コンテンツ幅を設定するための共通クラス */
+.wrapper {
+  max-width: 800px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+/* MainとFooter全体を囲むクラス */
+.container {
+  background: #050507;
+  color: #fff;
   text-align: center;
 }
+
 /*
-フェード表示させる要素に使用するためのクラス
+サイドボタン
+初期状態は「translateY(60px);」で画面の右側に隠しておく
+Galleryのタイトルが画面下にきたタイミングで、jQueryでCSSを変更してボタンをスライドしながら表示する
+Accessのタイトルが画面下にきたタイミングで、jQueryでCSSを変更してボタンをスライドしながら非表示にする
+※main.jsの「サイドボタンを表示」を参照
+*/
+#side-btn {
+  border: solid 1px #fff;
+  position: fixed;
+  right: -144px;
+  bottom: 200px;
+  transform: rotate(-90deg) translateY(60px);
+  transition: 0.6s;
+  z-index: 30;
+}
+#side-btn a {
+  width: 165px;
+  font-size: 0.875rem;
+  display: inline-block;
+  letter-spacing: 0.1em;
+  padding: 15px 0;
+  transition: 0.3s;
+}
+#side-btn a:last-of-type {
+  border-left: solid 1px #fff;
+}
+#side-btn a:hover {
+  opacity: 0.7;
+}
+
+/*
+Accessの背景画像
+初期状態は「display: none;」で非表示にしておく
+Accessのタイトルが画面下にきたタイミングで、jQueryのfadeInで表示する
+Contactのタイトルが画面下にきたタイミングで、jQueryのfadeOutで非表示にする
+「position: fixed;」で固定し「width: 100vw;」「height: 100vh;」で全画面表示する
+※main.jsの「Accessの背景画像を表示」を参照
+*/
+.bg {
+  background: url("../img/bg.jpg") center center repeat !important;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 10;
+}
+
+/*
+フェード表示
+InformationとGalleryの画像を下からふわっと表示させるためのクラス
+「transform: translate(0, 50%);」で下にさげた状態で、
+「opacity: 0;」で非表示にしておく
 */
 .fadein {
-  opacity : 0;
-  transform: translateY(20px);
-  transition: all 1s;
+  opacity: 0;
+  transform: translate(0, 50%);
+  transition: 2s;
+}
+/*
+fadeinクラスの要素が画面下にきたタイミングで、jQueryのinviewにてshowクラスを追加して
+「transform: translate(0, 0);」と「opacity: 1;」で表示させる
+※main.jsの「フェード表示」を参照
+*/
+.fadein.show {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
 /*
-「position: fixed;」でヘッダーを固定し、「z-index: 10;」で前面に表示
-※他のコンテンツでpositionをrelative、absolute、fixedのいずれかに
-設定している場合は、z-indexの数値が大きい方が前面に表示される
+ヘッダーロゴ
+初期状態は「display: none;」で非表示にしておく
+所定のスクロール位置にきたらjQueryのfadeInで表示する
+※main.jsの「ロゴ、ハンバーガーメニューの表示」を参照
 */
-#header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
+.logo {
+  line-height: 1px;
   position: fixed;
-  z-index: 10;
-  background-color: #fff;
+  top: 35px;
+  left: 30px;
+  /* 一番上にくるように設定 */
+  z-index: 40;
+  display: none;
 }
-/*
-ハンバーガーメニュー
-解説は、「中級編：ストアサイト（インテリア）」のCSS参照
-*/
-#navi {
+.logo a {
   display: block;
+}
+
+/*
+ハンバーガ―メニュー
+初期状態は「display: none;」で非表示にしておく
+所定のスクロール位置にきたらjQueryのfadeInで表示する
+※main.jsの「ロゴ、ハンバーガーメニューの表示」を参照
+*/
+.hamburger {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  /* 一番上にくるように設定 */
+  z-index: 40;
+  display: none;
+}
+.hamburger span {
+  width: 30px;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  left: 6px;
+  transition: 0.5s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 11px;
+}
+.hamburger span:nth-child(2) {
+  top: 21px;
+}
+.hamburger span:nth-child(3) {
+  top: 31px;
+}
+.hamburger.active span:nth-child(1) {
+  top: 21px;
+  left: 6px;
+  transform: rotate(-45deg);
+}
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 21px;
+  transform: rotate(45deg);
+}
+#navi {
+  width: 100%;
+  background-color: #fff;
+  color: #050507;
   position: fixed;
   top: 0;
-  left: -300px;
-  bottom: 0;
-  width: 300px;
-  color: #fff;
-  padding: 60px 25px;
-  background-color: #121212;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  transition: all .5s;
-  z-index: 20;
-  opacity: 0;
-}
-#navi a {
-  color: #fff;
-}
-.open #navi {
   left: 0;
-  opacity: 1;
+  text-align: center;
+  transform: translateY(-100%);
+  transition: 0.6s;
+  /* ロゴ、ハンバーガーより下でAccessページの背景画像よりも上にくるよう設定 */
+  z-index: 30;
 }
 #navi ul {
-  margin: 0;
-  padding: 0;
-}
-#navi ul.nav-menu {
-  margin-bottom: 60px;
-  border-top: solid 1px #fff;
-}
-#navi ul.nav-menu li {
-  position: relative;
-  margin: 0;
-  padding: 20px 0;
-  border-bottom: solid 1px #fff;
-}
-#navi ul.nav-sns li {
-  padding: 5px 0;
-}
-.toggle_btn {
-  display: block;
-  position: fixed;
-  top: 25px;
-  right: 45px;
-  width: 30px;
-  height: 30px;
-  transition: all .5s;
-  cursor: pointer;
-  z-index: 20;
-}
-.toggle_btn span {
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background-color: #333;
-  border-radius: 4px;
-  transition: all .5s;
-}
-.toggle_btn span:nth-child(1) {
-  top: 4px;
-}
-.toggle_btn span:nth-child(2) {
-  top: 14px;
-}
-.toggle_btn span:nth-child(3) {
-  bottom: 4px;
-}
-.open .toggle_btn span {
-  background-color: #fff;
-}
-.open .toggle_btn span:nth-child(1) {
-  -webkit-transform: translateY(10px) rotate(-315deg);
-  transform: translateY(10px) rotate(-315deg);
-}
-.open .toggle_btn span:nth-child(2) {
-  opacity: 0;
-}
-.open .toggle_btn span:nth-child(3) {
-  -webkit-transform: translateY(-10px) rotate(315deg);
-  transform: translateY(-10px) rotate(315deg);
-}
-#mask {
-  display: none;
-  transition: all .5s;
-}
-.open #mask {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: .8;
-  z-index: 10;
-  cursor: pointer;
+  background-color: #050507;
+  padding: 80px 0 30px 0;
 }
-
-/*-------------------------------------------
-Main
--------------------------------------------*/
-#main {
-  padding-top: 80px; 
+#navi ul li {
+  padding: 10px 0;
 }
-
-/*-------------------------------------------
-Video
--------------------------------------------*/
-#bg-video {
-  width: 100%;
-}
-
-/*-------------------------------------------
-Pickup
--------------------------------------------*/
-#pickup {
-  width: 100%;
-  padding: 100px 0 50px 0;
-}
-#pickup .slick-area {
-  font-size: 0;
-}
-#pickup .slick-area li {
-  padding: 0 30px;
-}
-
-/*-------------------------------------------
-Feature
--------------------------------------------*/
-#feature {
-  max-width: 1240px;
-  padding: 100px 16px 50px 16px;
-  margin: -50px auto 10px auto;
+#navi ul li a {
+  display: block;
 }
 /*
-グリッドレイアウト
-要素の最小サイズは300pxで、画面の幅にあわせて要素の幅が自動で変化する
-repeatで全ての要素に対して適用
-「gap: 26px;」で行と列の隙間を設定
+メニュー表示
+ハンバーガーメニューがクリックされた際に、jQueryで#naviにactiveクラスを追加して、
+メニューを上から下にスライドさせて表示する
 */
-#feature .grid {
-  display: grid;
-  gap: 26px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+#navi.active {
+  transform: translateY(0%);
 }
-#feature .grid .item {
-  transition: all  0.3s ease;
-  box-shadow: 0 0 8px 4px #ccc;
+
+/*-------------------------------------------
+Mainvisual
+-------------------------------------------*/
+#mainvisual {
+  display: flex;
+  justify-content: center;
+  /* スクロールで画像を拡大させた際に、横スクロールが出ないよう設定 */
+  overflow-x: hidden;
 }
-#feature .grid img {
-  vertical-align: top;
+/*
+スクロールしたタイミングでjQueryにて画像を拡大するが、
+その際に画像が縮まないよう「flex-shrink: 0;」を設定する
+*/
+#mainvisual img {
+  width: calc(100%/3);
+  height: 100vh;
+  flex-shrink: 0;
+  object-fit: cover;
 }
-#feature .grid .item-content {
-  padding: 30px;
+
+/*-------------------------------------------
+Information
+-------------------------------------------*/
+#information {
+  margin-bottom: 140px;
 }
-#feature .grid .item-cat {
-  font-size: 0.75rem;
-  margin-bottom: 20px;
+#information .info-date-en {
+  display: block;
+  font-size: 1.5rem;
 }
-#feature .grid .item-text {
-  font-weight: bold;
-  margin-bottom: 20px;
+#information .info-time-en {
+  display: block;
+  font-size: 1.125rem;
 }
-#feature .grid .item-date {
-  font-size: 0.75rem;
+#information .info-place {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 20px 0;
+}
+#information .info-date-ja {
+  font-size: 1.125rem;
+}
+
+/*-------------------------------------------
+Gallery
+-------------------------------------------*/
+#gallery {
+  margin-bottom: 480px;
+}
+#gallery .list li {
+  margin-bottom: 60px;
+}
+#gallery .list li img {
+  width: 48%;
+}
+/* 奇数のliタグは左寄せ */
+#gallery .list li:nth-child(odd) {
+  text-align: left;
+}
+/* 偶数のliタグは右寄せ */
+#gallery .list li:nth-child(even) {
   text-align: right;
 }
+
+/*-------------------------------------------
+Access
+-------------------------------------------*/
+/*
+「z-index: 20;」でコンテンツが背景画像の上にくるようにする
+※デフォルトのposition（static）では、z-indexを指定できないため。
+「position: relative;」設定する
+*/
+#access {
+  margin-bottom: 480px;
+  position: relative;
+  z-index: 20;
+}
+#access .place {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+#access .address {
+  margin-bottom: 20px;
+}
+#access .contact {
+  margin-bottom: 30px;
+}
+#access .btn {
+  border: solid 1px #fff;
+  color: #fff;
+  display: inline-block;
+  padding: 15px 82px;
+  transition: 0.3s;
+}
+#access .btn:hover {
+  background-color: #050507;
+}
+
 /*-------------------------------------------
 Contact
 -------------------------------------------*/
+/*
+「z-index: 20;」でコンテンツが背景画像の上にくるようにする
+*/
 #contact {
+  margin-bottom: 200px;
+  position: relative;
+  z-index: 20;
+}
+#contact .btn {
+  width: 400px;
+  border: solid 1px #7d7d7d;
   color: #fff;
-  background-color: #121212;
-  padding: 50px 0;
+  display: block;
+  padding: 30px 0;
+  margin: 0 auto 20px auto;
+  position: relative;
+  transition: 0.3s;
 }
-#contact .sec-title {
-  color: #fff;
-}
-#contact .content {
-  max-width: 1240px;
-  padding: 0 16px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-#contact .contact-info p {
-  margin-bottom: 30px;
-}
-#contact .contact-info,
-#contact .contact-form {
-  width: 45%;
-}
-#contact .contact-form input,
-#contact .contact-form textarea {
-  width: 100%;
+/*
+ボタン矢印
+*/
+#contact .btn::before,
+#contact .btn::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  height: 1px;
   background-color: #fff;
-  padding: 10px;
-  margin-bottom: 20px;
+  transition: 0.3s;
 }
-#contact .contact-form .button input {
-  width: 200px;
-  color: #fff;
-  background-color: #121212;
-  border: solid 1px #fff;
-  padding: 12px 0;
-  margin-bottom: 0;
+/*
+矢印の直線部分
+*/
+#contact .btn::before {
+  width: 120px;
+  top: 48px;
 }
-#contact .contact-form .button input:hover {
-  color: #202020;
-  background-color: #fff;
+/*
+矢印の先端部分
+「rotate(25deg)」で角度をつける
+*/
+#contact .btn::after {
+  width: 15px;
+  top: 45px;
+  transform: rotate(25deg);
+}
+#contact .btn:hover {
+  opacity: 0.7;
+}
+#contact .btn:hover::before,
+#contact .btn:hover::after {
+  right: -50px;
 }
 
 /*-------------------------------------------
-フッター
+Footer
 -------------------------------------------*/
 #footer {
-  color: #fff;
-  background-color: #121212;
-  text-align: center;
-  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: solid 1px #fff;
   font-size: 0.75rem;
+  padding: 80px 30px;
+  text-align: left;
+}
+#footer p {
+  line-height: 1.6;
+}
+#footer .sns {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+#footer .sns li {
+  margin-right: 15px;
+}
+#footer .copyright {
+  display: flex;
+  align-items: center;
+}
+#footer .copyright li:last-child {
+  margin-left: 30px;
 }
 
 /*-------------------------------------------
 SP
 -------------------------------------------*/
-@media screen and (max-width: 600px) {
-  .sec-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+@media screen and (max-width: 900px) {
+  .site-title {
+    font-size: 3rem;
+    margin: 50px 0;
+  }
+  .section-title {
+    font-size: 2rem;
   }
 
   /*-------------------------------------------
-  ヘッダー
+  Information
   -------------------------------------------*/
-  #header {
-    padding: 20px 16px;
+  #information {
+    margin-bottom: 80px;
   }
-  .toggle_btn {
-    right: 20px;
+  #information .info-date-en,
+  #information .info-time-en,
+  #information .info-date-ja {
+    font-size: 1rem;
+  }
+  #information .info-place {
+    font-size: 2rem;
   }
 
   /*-------------------------------------------
-  Video
+  Gallery
   -------------------------------------------*/
-  /*
-  「height: 100vh;」で画面の高さにあわせる
-  「object-fit: cover;」で中央でトリミング
-  */
-  #bg-video {
+  #gallery {
+    margin-bottom: 280px;
+  }
+  #gallery .list li {
+    margin-bottom: 30px;
+  }
+  #gallery .list li img {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
   }
 
   /*-------------------------------------------
-  Pickup
+  Access
   -------------------------------------------*/
-  #pickup {
-    padding: 80px 0;
-  }
-  #pickup .slick-area li {
-    padding: 0 20px;
-  }
-
-  /*-------------------------------------------
-  Feature
-  -------------------------------------------*/
-  #feature {
-    padding: 80px 16px;
-  }
-  #feature .grid .item-content {
-    padding: 16px;
+  #access {
+    margin-bottom: 280px;
   }
 
   /*-------------------------------------------
   Contact
   -------------------------------------------*/
-  #contact {
-    padding: 80px 0;
+  #contact .btn {
+    width: 100%;
   }
-  #contact .content {
+  /*
+  スマホの時は矢印を消す
+  */
+  #contact .btn::before,
+  #contact .btn::after {
+    content: none;
+  }
+
+  /*-------------------------------------------
+  Footer
+  -------------------------------------------*/
+  #footer {
     flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 30px;
   }
-  #contact .contact-info,
-  #contact .contact-form {
-    width: 100%;
-  }
-  #contact .contact-form .button input {
-    width: 100%;
+  #footer .sns {
+    margin-bottom: 30px;
   }
 }
