@@ -2,189 +2,133 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>Sneakers</title>
-    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキス">
+    <title>FA EXHIBITION</title>
+    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="js/jquery.inview.min.js"></script>
     <script src="js/main.js"></script>
   </head>
 
   <body>
     <header id="header">
-      <h1 class="site-title">
-        <a href="index.html"><img src="img/logo.svg" alt="Sneakers"></a>
-      </h1>
+      <div class="logo">
+        <a href="#"><img src="img/logo.svg" alt="FA EXHIBITION"></a>
+      </div>
 
       <nav id="navi">
-        <ul class="nav-menu">
-          <li><a href="#pickup">PICK UP</a></li>
-          <li><a href="#feature">FEATURE</a></li>
+        <ul class="menu">
+          <li><a href="#">TOP</a></li>
+          <li><a href="#information">INFORMATION</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#access">ACCESS</a></li>
           <li><a href="#contact">CONTACT</a></li>
-        </ul>
-        <ul class="nav-sns">
-          <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
-          <li><a href="https://www.facebook.com/" target="_blank">facebook</a></li>
-          <li><a href="https://www.instagram.com/" target="_blank">instagram</a></li>
         </ul>
       </nav>
 
-      <div class="toggle_btn">
+      <div class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
-
-      <div id="mask"></div>
     </header>
 
-    <main id="main">
-      <div id="video">
-        <video id="bg-video" src="video/video.mp4" loop autoplay muted playsinline></video>
-      </div>
+    <div class="container">
+      <main>
+        <!-- メインビジュアル -->
+        <div id="mainvisual">
+          <img src="img/mainvisual1.jpg" alt="">
+          <img src="img/mainvisual2.jpg" alt="">
+          <img src="img/mainvisual3.jpg" alt="">
+        </div>
 
-      <section id="pickup">
-        <h2 class="sec-title">PICK UP</h2>
-        <ul class="slick-area">
-          <li><img src="img/pickup1.jpg" alt="ピックアップ１　テキストテキスト"></li>
-          <li><img src="img/pickup2.jpg" alt="ピックアップ２　テキストテキスト"></li>
-          <li><img src="img/pickup3.jpg" alt="ピックアップ３　テキストテキスト"></li>
-          <li><img src="img/pickup4.jpg" alt="ピックアップ４　テキストテキスト"></li>
-          <li><img src="img/pickup5.jpg" alt="ピックアップ５　テキストテキスト"></li>
-          <li><img src="img/pickup6.jpg" alt="ピックアップ６　テキストテキスト"></li>
-          <li><img src="img/pickup7.jpg" alt="ピックアップ７　テキストテキスト"></li>
-          <li><img src="img/pickup8.jpg" alt="ピックアップ８　テキストテキスト"></li>
-          <li><img src="img/pickup9.jpg" alt="ピックアップ９　テキストテキスト"></li>
+        <!-- サイトタイトル -->
+        <h1 class="site-title inview fadein">Hello Flower!<br>FA EXHIBITION 2021</h1>
+
+        <!-- Information -->
+        <section id="information" class="inview fadein">
+          <h2 class="section-title">INFORMATION</h2>
+          <p>
+            <span class="info-date-en">2021 JUL 1(THU)-3(SAT)</span>
+            <span class="info-time-en">DAY1 10am-6pm OTHER 10am-5:30pm</span>
+          </p>
+          <p class="info-place">at PARK SIDE HALL</p>
+          <p class="info-date-ja">
+            2021年7月1日(木)ー3日(土)<br>
+            Day1 10時〜18時　その他 10時〜17時30分
+          </p>
+        </section>
+
+        <!-- サイドボタン -->
+        <div id="side-btn">
+          <a href="#">FOR VISITOR</a>
+          <a href="#">FOR EXHIBITOR</a>
+        </div>
+
+        <!-- Gallery -->
+        <section id="gallery" class="wrapper">
+          <h2 class="section-title inview fadein">GALLERY</h2>
+          <ul class="list">
+            <li class="inview fadein"><img src="img/flower1.jpg" alt=""></li>
+            <li class="inview fadein"><img src="img/flower2.jpg" alt=""></li>
+            <li class="inview fadein"><img src="img/flower3.jpg" alt=""></li>
+            <li class="inview fadein"><img src="img/flower4.jpg" alt=""></li>
+            <li class="inview fadein"><img src="img/flower5.jpg" alt=""></li>
+            <li class="inview fadein"><img src="img/flower6.jpg" alt=""></li>
+          </ul>
+        </section>
+
+        <!-- Access -->
+        <section id="access">
+          <h2 class="section-title">ACCESS</h2>
+          <p class="place">PARK SIDE HALL</p>
+          <p class="address">
+            〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL<br>
+            PARK SIDE HALL, 1-1-1 Jiyugaoka, Meguro-ku, Tokyo
+          </p>
+          <p class="contact">
+            Tel: 03-1111-1111<br>
+            E-mail: info@xxxxxxx.jp
+          </p>
+          <a class="btn" href="#" target="_blank">GOOGLE MAP</a>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="wrapper">
+          <h2 class="section-title">CONTACT</h2>
+          <a class="btn" href="#">出展に関するお問い合わせ</a>
+          <a class="btn" href="#">その他のお問い合わせ</a>
+        </section>
+
+        <!-- Accessの背景画像 -->
+        <div class="bg"></div>
+      </main>
+
+      <footer id="footer">
+        <div>
+          <p>FA EXHIBITION</p>
+          <p>〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL</p>
+          <p class="contact">
+            Tel: 03-1111-1111<br>
+            E-mail: info@xxxxxxx.jp
+          </p>
+          <ul class="sns">
+            <li><a href="#" target="_blank">Twitter</a></li>
+            <li><a href="#" target="_blank">Facebook</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+        <ul class="copyright">
+          <li><a href="#">PRIVACY POLICY</a></li>
+          <li>&copy; FA EXHIBITION</li>
         </ul>
-      </section>
-
-      <section id="feature">
-        <h2 class="sec-title">FEATURE</h2>
-        <div class="grid">
-          <div class="item">
-            <img class="fadein" src="img/feature1.jpg" alt="">
-            <div class="item-content">
-              <p class="item-cat">category</p>
-              <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              <p class="item-date">XXXX.XX.XX</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img class="fadein" src="img/feature2.jpg" alt="">
-            <div class="item-content">
-              <p class="item-cat">category</p>
-              <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              <p class="item-date">XXXX.XX.XX</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img class="fadein" src="img/feature3.jpg" alt="">
-            <div class="item-content">
-              <p class="item-cat">category</p>
-              <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              <p class="item-date">XXXX.XX.XX</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img class="fadein" src="img/feature4.jpg" alt="">
-            <div class="item-content">
-              <p class="item-cat">category</p>
-              <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              <p class="item-date">XXXX.XX.XX</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img class="fadein" src="img/feature5.jpg" alt="">
-            <div class="item-content">
-              <p class="item-cat">category</p>
-              <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              <p class="item-date">XXXX.XX.XX</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img class="fadein" src="img/feature6.jpg" alt="">
-            <div class="item-content">
-              <p class="item-cat">category</p>
-              <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              <p class="item-date">XXXX.XX.XX</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img class="fadein" src="img/feature7.jpg" alt="">
-            <div class="item-content">
-              <p class="item-cat">category</p>
-              <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              <p class="item-date">XXXX.XX.XX</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img class="fadein" src="img/feature8.jpg" alt="">
-            <div class="item-content">
-              <p class="item-cat">category</p>
-              <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              <p class="item-date">XXXX.XX.XX</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img class="fadein" src="img/feature9.jpg" alt="">
-            <div class="item-content">
-              <p class="item-cat">category</p>
-              <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              <p class="item-date">XXXX.XX.XX</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2 class="sec-title">CONTACT</h2>
-        <div class="content">
-          <div class="contact-info">
-            <p>テキストテキストテキスト</p>
-            <p>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            </p>
-            <p>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            </p>
-          </div>
-
-          <div class="contact-form">
-            <form action="#">
-              <dl>
-                <dt><label for="name">Name:</label></dt>
-                <dd><input type="text" id="name" name="your-name"></dd>
-                <dt><label for="email">Mail:</label></dt>
-                <dd><input type="email" id="email" name="your-email"></dd>
-                <dt><label for="message">Message:</label></dt>
-                <dd><textarea id="message" name="your-message"></textarea></dd>
-              </dl>
-              <div class="button"><input type="submit" value="SEND"></div>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer id="footer">
-      <p>&copy; Sneakers</p>
-    </footer>
-
+      </footer>
+    </div>
   </body>
-</html>
+ </html> 
