@@ -1,134 +1,76 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>FA EXHIBITION</title>
-    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/jquery.inview.min.js"></script>
-    <script src="js/main.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+    <title>佐伯事務所</title>
+</head>
+<body>
+  <div>
+    <img src="img/3dd9c8adddc8a205053b7be703e6b347_w.jpeg">
 
-  <body>
-    <header id="header">
-      <div class="logo">
-        <a href="#"><img src="img/logo.svg" alt="FA EXHIBITION"></a>
+  </div>
+  <h1>佐伯事務所</h1>
+  <h2>ビジネスパートナー</h2>
+  <p>貴方の会社の人事や労務のお仕事お任せください。</p>
+  <p>給与計算、就業規則、助成金、社会保険、労働保険、会社の顧問等、どんな相談にも乗ります。</p>
+  <p>今の社労士事務所に満足していない方々。</p>
+  <section>
+    <section id="inquiry">
+<div class="sec_inner container">
+<h3 class="common_h">Contact</h3>
+<div class="row">
+  <p class="alert alert-info">
+    下記フォームにご入力いただいた後、「内容を確認」ボタンをクリックしてお進み下さい。
+  </p>
+</div>
+<div class="row">
+  <form name="F0" id="F0" action="https://paris-hana.com/?m=inquiry/result" class="form-horizontal" method="POST">
+    <div class="form-group <!--%name_class_lbl%-->">
+      <label class="col-xs-3 control-label"><span class="text-danger">※</span>お名前</label>
+      <div class="col-xs-9">
+        <input type="text" name="name" value="" class="form-control" />
+        <span class="help-block"><!--%error_name%--></span>
       </div>
-
-      <nav id="navi">
-        <ul class="menu">
-          <li><a href="#">TOP</a></li>
-          <li><a href="#information">INFORMATION</a></li>
-          <li><a href="#gallery">GALLERY</a></li>
-          <li><a href="#access">ACCESS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </nav>
-
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </header>
-
-    <div class="container">
-      <main>
-        <!-- メインビジュアル -->
-        <div id="mainvisual">
-          <img src="img/mainvisual1.jpg" alt="">
-          <img src="img/mainvisual2.jpg" alt="">
-          <img src="img/mainvisual3.jpg" alt="">
-        </div>
-
-        <!-- サイトタイトル -->
-        <h1 class="site-title inview fadein">Hello Flower!<br>FA EXHIBITION 2021</h1>
-
-        <!-- Information -->
-        <section id="information" class="inview fadein">
-          <h2 class="section-title">INFORMATION</h2>
-          <p>
-            <span class="info-date-en">2021 JUL 1(THU)-3(SAT)</span>
-            <span class="info-time-en">DAY1 10am-6pm OTHER 10am-5:30pm</span>
-          </p>
-          <p class="info-place">at PARK SIDE HALL</p>
-          <p class="info-date-ja">
-            2021年7月1日(木)ー3日(土)<br>
-            Day1 10時〜18時　その他 10時〜17時30分
-          </p>
-        </section>
-
-        <!-- サイドボタン -->
-        <div id="side-btn">
-          <a href="#">FOR VISITOR</a>
-          <a href="#">FOR EXHIBITOR</a>
-        </div>
-
-        <!-- Gallery -->
-        <section id="gallery" class="wrapper">
-          <h2 class="section-title inview fadein">GALLERY</h2>
-          <ul class="list">
-            <li class="inview fadein"><img src="img/flower1.jpg" alt=""></li>
-            <li class="inview fadein"><img src="img/flower2.jpg" alt=""></li>
-            <li class="inview fadein"><img src="img/flower3.jpg" alt=""></li>
-            <li class="inview fadein"><img src="img/flower4.jpg" alt=""></li>
-            <li class="inview fadein"><img src="img/flower5.jpg" alt=""></li>
-            <li class="inview fadein"><img src="img/flower6.jpg" alt=""></li>
-          </ul>
-        </section>
-
-        <!-- Access -->
-        <section id="access">
-          <h2 class="section-title">ACCESS</h2>
-          <p class="place">PARK SIDE HALL</p>
-          <p class="address">
-            〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL<br>
-            PARK SIDE HALL, 1-1-1 Jiyugaoka, Meguro-ku, Tokyo
-          </p>
-          <p class="contact">
-            Tel: 03-1111-1111<br>
-            E-mail: info@xxxxxxx.jp
-          </p>
-          <a class="btn" href="#" target="_blank">GOOGLE MAP</a>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="wrapper">
-          <h2 class="section-title">CONTACT</h2>
-          <a class="btn" href="#">出展に関するお問い合わせ</a>
-          <a class="btn" href="#">その他のお問い合わせ</a>
-        </section>
-
-        <!-- Accessの背景画像 -->
-        <div class="bg"></div>
-      </main>
-
-      <footer id="footer">
-        <div>
-          <p>FA EXHIBITION</p>
-          <p>〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL</p>
-          <p class="contact">
-            Tel: 03-1111-1111<br>
-            E-mail: info@xxxxxxx.jp
-          </p>
-          <ul class="sns">
-            <li><a href="#" target="_blank">Twitter</a></li>
-            <li><a href="#" target="_blank">Facebook</a></li>
-            <li><a href="#" target="_blank">Instagram</a></li>
-          </ul>
-        </div>
-        <ul class="copyright">
-          <li><a href="#">PRIVACY POLICY</a></li>
-          <li>&copy; FA EXHIBITION</li>
-        </ul>
-      </footer>
     </div>
-  </body>
- </html> 
+    <div class="form-group <!--%mail_adr_class_lbl%-->">
+      <label class="col-xs-3 control-label"><span class="text-danger">※</span>メールアドレス</label>
+      <div class="col-xs-9">
+        <input type="text" name="mail_adr" value="" class="form-control" />
+        <span class="help-block"><!--%error_mail_adr%--></span>
+      </div>
+    </div>
+    <div class="form-group <!--%tel_class_lbl%-->">
+      <label class="col-xs-3 control-label">お電話番号</label>
+      <div class="col-xs-9">
+        <input type="text" name="tel" value="" class="form-control" />
+        <span class="help-block"><!--%error_tel%--></span>
+      </div>
+    </div>
+    <div class="form-group <!--%tel_class_lbl%-->">
+      <label class="col-xs-3 control-label">ご住所</label>
+      <div class="col-xs-9">
+        <input type="text" name="addres" value="" class="form-control" />
+        <span class="help-block"><!--%error_address%--></span>
+      </div>
+    </div>
+    <div class="form-group <!--%text_class_lbl%-->">
+      <label class="col-xs-12 col-sm-3 control-label"><span class="text-danger">※</span>お問い合せ内容</label>
+      <div class="col-xs-12 col-sm-9">
+        <textarea name="text" class="form-control"></textarea>
+        <span class="help-block"><!--%error_text%--></span>
+      </div>
+    </div>
+    <input type="hidden" name="mode" value="chk" />
+  </form>
+    <div class="text-center">
+      <a href="javascript:void(0);" onclick="send_post()" class="btn btn-primary" style="color: #FFF;">内容を確認</a>
+    </div>
+</div>
+</div>
+
+</section>
+</body>
+</html>
