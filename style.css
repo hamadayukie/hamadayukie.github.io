@@ -1,3 +1,7 @@
+body {
+  background-color: bisque;
+}
+
 div  {
   text-align: center;
 }
@@ -17,5 +21,14 @@ p {
 }
 
 section {
+  text-align: center;
+}
+
+section p {
+  
+  background-color: rgb(159, 230, 233);
+  text-align: center;
+  color: rgb(126, 8, 24);
+  font-weight: 900;
   text-align: center;
 }
